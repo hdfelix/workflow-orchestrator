@@ -28,7 +28,8 @@ module Workflow
     end
 
     def draw(graph, from_state)
-      graph.add_edges(from_state.name.to_s, transitions_to.to_s, meta.merge(:label => to_s))
+      attributes = { :label => to_s }
+      graph.add_edges(from_state.name.to_s, transitions_to.to_s, attributes)
     end
 
     def to_s
